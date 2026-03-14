@@ -1,0 +1,27 @@
+{
+  "id": "module-1-ros/exercises",
+  "title": "Learning Outcomes and Exercises for Module 1",
+  "description": "Learning Objectives Achievement Checklist",
+  "source": "@site/docs/module-1-ros/exercises.md",
+  "sourceDirName": "module-1-ros",
+  "slug": "/module-1-ros/exercises",
+  "permalink": "/Physical-AI-Humanoid-Robotics-Textbook/docs/module-1-ros/exercises",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/module-1-ros/exercises.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 7,
+  "frontMatter": {
+    "sidebar_position": 7
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Conceptual Diagrams and Biological Analogies",
+    "permalink": "/Physical-AI-Humanoid-Robotics-Textbook/docs/module-1-ros/concepts-diagrams"
+  },
+  "next": {
+    "title": "Module 2: The Digital Twin (Gazebo & Unity)",
+    "permalink": "/Physical-AI-Humanoid-Robotics-Textbook/docs/category/module-2-the-digital-twin-gazebo--unity"
+  }
+}

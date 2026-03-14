@@ -1,0 +1,27 @@
+{
+  "id": "module-1-ros/urdf-basics",
+  "title": "URDF Basics for Humanoids: Defining the Robotic Anatomy",
+  "description": "Understanding URDF (Unified Robot Description Format)",
+  "source": "@site/docs/module-1-ros/urdf-basics.md",
+  "sourceDirName": "module-1-ros",
+  "slug": "/module-1-ros/urdf-basics",
+  "permalink": "/Physical-AI-Humanoid-Robotics-Textbook/docs/module-1-ros/urdf-basics",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/module-1-ros/urdf-basics.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 5,
+  "frontMatter": {
+    "sidebar_position": 5
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Python Agents with rclpy: Programming the Robotic Mind",
+    "permalink": "/Physical-AI-Humanoid-Robotics-Textbook/docs/module-1-ros/python-agents"
+  },
+  "next": {
+    "title": "Conceptual Diagrams and Biological Analogies",
+    "permalink": "/Physical-AI-Humanoid-Robotics-Textbook/docs/module-1-ros/concepts-diagrams"
+  }
+}

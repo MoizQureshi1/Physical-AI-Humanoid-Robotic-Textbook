@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(powershell.exe -ExecutionPolicy Bypass -File \".specify/scripts/powershell/check-prerequisites.ps1\" -Json -PathsOnly:*)",
+      "Bash(.specify/scripts/powershell/setup-plan.ps1:*)"
+    ]
+  }
+}

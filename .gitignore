@@ -1,0 +1,49 @@
+# Dependencies
+node_modules/
+
+# Docusaurus build output
+.build/
+dist/
+out/
+
+# Temporary files
+*.tmp
+*.temp
+.DS_Store
+Thumbs.db
+
+# Environment variables
+.env*
+!.env.example
+
+# Logs
+*.log
+logs/
+
+# Coverage directory used by tools like istanbul
+coverage/
+*.lcov
+
+# nyc test coverage
+.nyc_output/
+
+# Verbose logging
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Editor directories and files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS generated files
+ehthumbs.db
+Icon?
+desktop.ini
+
+# Build outputs for various tools
+.next/
+.nuxt/
+public/

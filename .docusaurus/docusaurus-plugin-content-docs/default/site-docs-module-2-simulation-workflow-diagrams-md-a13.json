@@ -1,0 +1,27 @@
+{
+  "id": "module-2-simulation/workflow-diagrams",
+  "title": "Simulation Workflow Diagrams and Visual Representations",
+  "description": "The Simulation Development Cycle",
+  "source": "@site/docs/module-2-simulation/workflow-diagrams.md",
+  "sourceDirName": "module-2-simulation",
+  "slug": "/module-2-simulation/workflow-diagrams",
+  "permalink": "/Physical-AI-Humanoid-Robotics-Textbook/docs/module-2-simulation/workflow-diagrams",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/module-2-simulation/workflow-diagrams.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 5,
+  "frontMatter": {
+    "sidebar_position": 5
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Sensor Simulation: Virtual Perception for Safe Robot Learning",
+    "permalink": "/Physical-AI-Humanoid-Robotics-Textbook/docs/module-2-simulation/sensor-sim"
+  },
+  "next": {
+    "title": "Physics Properties and Virtual Sensors in Simulation",
+    "permalink": "/Physical-AI-Humanoid-Robotics-Textbook/docs/module-2-simulation/physics-properties"
+  }
+}

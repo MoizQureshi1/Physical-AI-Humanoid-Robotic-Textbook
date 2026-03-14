@@ -1,0 +1,22 @@
+/* You can override the default Docusaurus styling here. */
+
+:root {
+  --ifm-color-primary: #25c059;
+  --ifm-color-primary-dark: #21ad51;
+  --ifm-color-primary-darker: #1fa24d;
+  --ifm-color-primary-darkest: #198740;
+  --ifm-color-primary-light: #3bc66d;
+  --ifm-color-primary-lighter: #42c973;
+  --ifm-color-primary-lightest: #5dd087;
+}
+
+.docusaurus-highlight-code-line {
+  background-color: rgba(0, 0, 0, 0.1);
+  display: block;
+  margin: 0 calc(-1 * var(--ifm-pre-padding));
+  padding: 0 var(--ifm-pre-padding);
+}
+
+html[data-theme='dark'] .docusaurus-highlight-code-line {
+  background-color: rgba(0, 0, 0, 0.3);
+}
