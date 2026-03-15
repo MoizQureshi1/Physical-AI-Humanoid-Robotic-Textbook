@@ -2,6 +2,8 @@
 node_modules/
 
 # Docusaurus build output
+.docusaurus/
+build/
 .build/
 dist/
 out/
