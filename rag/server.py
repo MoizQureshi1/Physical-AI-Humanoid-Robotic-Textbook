@@ -21,6 +21,10 @@ origins = [
     "http://localhost:3000",
     "http://localhost:3001",
     "http://127.0.0.1:3000",
+    "http://127.0.0.1:3001",
+    "http://localhost:8000",
+    "http://127.0.0.1:8000",
+    "*", # Allow all for development
 ]
 
 app.add_middleware(
@@ -86,7 +90,11 @@ template = """You are a helpful AI assistant for a robotics textbook. Answer the
 Question: {question}
 """
 prompt = PromptTemplate.from_template(template)
-rag_chain = create_rag_chain(retriever, llm, prompt)
+rag_chain = None
+if retriever and llm and prompt: # Ensure all components are available
+    rag_chain = create_rag_chain(retriever, llm, prompt)
+else:
+    print("Error: RAG chain could not be initialized. Please check Qdrant connection and GOOGLE_API_KEY.")
 
 # Prompt for selected text
 selected_text_template = """Based ONLY on the following selected text, answer the question.
@@ -109,8 +117,9 @@ class ChatResponse(BaseModel):
 async def chat_endpoint(http_request: Request, request: ChatRequest):
     if not GOOGLE_API_KEY:
         return ChatResponse(answer="Google API Key is missing. Please set GOOGLE_API_KEY in the rag/.env file.", sources=["System"])
-    if not retriever:
-        raise HTTPException(status_code=500, detail="Vector store is not available.")
+    
+    if not rag_chain and not request.context: # If selected_text is provided, rag_chain is not strictly needed
+        raise HTTPException(status_code=500, detail="RAG chain is not available. Check server logs for vector store initialization errors.")
         
     try:
         query = request.query

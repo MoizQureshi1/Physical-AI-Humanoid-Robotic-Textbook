@@ -21,8 +21,15 @@ const ChatWidget = () => {
   };
 
   const handleSendMessage = async (customQuery = null, context = null) => {
-    const query = customQuery || inputText;
-    if (query.trim() === '') return;
+    // Ensure query is a string and not a React event object
+    let query = "";
+    if (typeof customQuery === 'string') {
+      query = customQuery;
+    } else {
+      query = inputText;
+    }
+
+    if (!query || query.trim() === '') return;
 
     const userMessage = { sender: 'user', text: query };
     setMessages((prevMessages) => [...prevMessages, userMessage]);
@@ -42,19 +49,23 @@ const ChatWidget = () => {
       });
 
       if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
+        const errorData = await response.json().catch(() => ({}));
+        throw new Error(errorData.detail || `Server error: ${response.status}`);
       }
 
       const data = await response.json();
-      const botMessage = { sender: 'bot', text: data.answer };
+      const botMessage = { sender: 'bot', text: data.answer || "Sorry, I couldn't generate an answer." };
       setMessages((prevMessages) => [...prevMessages, botMessage]);
     } catch (error) {
       console.error('Error sending message:', error);
-      const errorMessage = { sender: 'bot', text: 'Error: Could not get a response from the server. Make sure the backend is running.' };
+      const errorMessage = { 
+        sender: 'bot', 
+        text: `Error: ${error.message}. Please ensure the backend is running at http://localhost:8000` 
+      };
       setMessages((prevMessages) => [...prevMessages, errorMessage]);
     } finally {
       setIsLoading(false);
-      setIsOpen(true); // Open chat window to show the response
+      setIsOpen(true);
     }
   };
 
@@ -159,7 +170,7 @@ const ChatWidget = () => {
               placeholder="Ask me anything about the book..."
               rows="1"
             />
-            <button onClick={handleSendMessage} disabled={isLoading}>
+            <button onClick={() => handleSendMessage()} disabled={isLoading}>
               Send
             </button>
           </div>

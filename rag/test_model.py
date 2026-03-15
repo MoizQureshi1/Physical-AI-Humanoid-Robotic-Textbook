@@ -1,16 +1,25 @@
 import os
 from langchain_google_genai import GoogleGenerativeAIEmbeddings
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
 
 def test():
-    api_key = "AIzaSyBZYNpfBEfyjyuTl3DQU0mm9J9S7zHT8bE"
-    print(f"Testing with model embedding-001...")
+    api_key = os.getenv("GOOGLE_API_KEY")
+    if not api_key:
+        print("❌ FAILED. Error: GOOGLE_API_KEY not found in .env file.")
+        return
+
+    print(f"Testing with model gemini-embedding-001...")
     try:
         embeddings = GoogleGenerativeAIEmbeddings(
-            model="models/embedding-001",
+            model="models/gemini-embedding-001",
             google_api_key=api_key
         )
         vector = embeddings.embed_query("hello world")
         print("✅ SUCCESS! Key and Model are working.")
+        print(f"Vector dimension: {len(vector)}")
     except Exception as e:
         print(f"❌ FAILED. Error: {e}")
 
